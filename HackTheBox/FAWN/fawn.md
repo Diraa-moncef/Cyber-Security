@@ -145,12 +145,12 @@ ping <TARGET_IP>
 ---
 📸 **Screenshot :**
 ### 📸 Screenshot 1 — Résultat du scan Nmap
-![Ping](IMG/ping.png)
+![Ping](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/ping.png)
 <!-- ============================================ -->
 <!-- CAPTURE 1 : Placez votre screenshot ici      -->
 <!-- Remplacez le chemin par votre image           -->
 <!-- ============================================ -->
-![01 - Scan Nmap](screenshots/01_nmap_scan.png)
+![01 - Scan Nmap](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/nmap%20version.png)
 ---
 ## 🔐 Exploitation — Connexion FTP Anonyme
 ### Step 2 — Nmap Scan (Version Detection)
@@ -164,7 +164,7 @@ nmap -sV <TARGET_IP>
 > Scan des services pour identifier **vsftpd 3.0.3** sur le port **21**.
 > **Code de réponse** : `230` — Login successful ✅
 📸 **Screenshot :**
-![Nmap Version](IMG/nmap%20version.png)
+![Nmap Version](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/OS%20detection.png)
 ---
 ### 📸 Screenshot 2 — Connexion FTP anonyme réussie
 ### Step 3 — Nmap Scan (OS Detection)
@@ -175,12 +175,12 @@ nmap -sV <TARGET_IP>
 ```bash
 nmap -O <TARGET_IP>
 ```
-![02 - Connexion FTP](screenshots/02_ftp_login.png)
+![02 - Connexion FTP]()
 > Détection du système d'exploitation : **Unix / Linux**.
 ---
 📸 **Screenshot :**
 ### Étape 4 — Lister les fichiers
-![OS Detection](IMG/OS%20detection.png)
+![OS Detection]([IMG/OS%20detection.png](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/OS%20detection.png))
 ```bash
 ls
 ```
@@ -199,8 +199,8 @@ ftp -?
 <!-- CAPTURE 3 : Placez votre screenshot ici      -->
 <!-- Remplacez le chemin par votre image           -->
 <!-- ============================================ -->
-![FTP Menu](IMG/ftp%20menu.png)
-![03 - Listing FTP](screenshots/03_ftp_listing.png)
+![FTP Menu](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/ftp%20menu.png)
+![03 - Listing FTP](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/connection%20ftp%20.png)
 ---
 ### Étape 5 — Télécharger le flag
 ### Step 5 — FTP Anonymous Login
@@ -220,8 +220,7 @@ Password: (vide)
 <!-- CAPTURE 4 : Placez votre screenshot ici      -->
 <!-- Remplacez le chemin par votre image           -->
 <!-- ============================================ -->
-![Connection FTP](IMG/connection%20ftp%20.png)
-![04 - Get Flag](screenshots/04_ftp_get_flag.png)
+![04 - Get Flag](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/get%20flag.png)
 ---
 ### Étape 6 — Lire le flag
 ### Step 6 — Get the Flag 🚩
@@ -240,7 +239,7 @@ cat flag.txt
 <!-- Remplacez le chemin par votre image           -->
 <!-- ============================================ -->
 ![Get Flag](IMG/get%20flag.png)
-![05 - Flag Content](screenshots/05_flag_content.png)
+![05 - Flag Content](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/FAWN/IMG/get%20flag.png)
 ---
 ## 🏁 Machine Complétée
 ## 🏁 Result
