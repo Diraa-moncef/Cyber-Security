@@ -195,21 +195,21 @@ La machine **MEOW** illustre une vulnérabilité critique : un service **Telnet*
 
 ## 📸 Captures d'écran
 
-### Screenshot 1 — Connexion VPN & Interface HTB
+### Screenshot 1 — Con/home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/ping scan.png)
 
 <!-- Remplacer par votre capture d'écran -->
-![Connexion VPN HTB](./home/H4CK0ZCEF/Desktop/my-security-project/Hackthebox-Writeups/MEOW/ping scan.png)
+![Connexion VPN HTB](./home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/ping scan.png)
 
 ---
 
-### Screenshot 2 — Scan Nmap & Découverte du service Telnet
+### Screenshot/home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/nmap&telnet .png)
 
 <!-- Remplacer par votre capture d'écran -->
 ![Scan Nmap](./home/H4CK0ZCEF/Desktop/my-security-project/Hackthebox-Writeups/MEOW/nmap&telnet .png)
 
 ---
 
-### Screenshot 3 — Connexion Telnet & Flag root
+### Screenshot/home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/flag.png)
 
 <!-- Remplacer par votre capture d'écran -->
 ![Flag root](./home/H4CK0ZCEF/Desktop/my-security-project/Hackthebox-Writeups/MEOW/flag.png)
@@ -217,5 +217,5 @@ La machine **MEOW** illustre une vulnérabilité critique : un service **Telnet*
 ---
 
 > 📌 **Auteur :** Votre nom / pseudo  
-> 🔗 **Profil HTB :** [Votre profil](https://app.hackthebox.com/profile/VOTRE_ID)  
+> 🔗 **Profil HTB :** [Votre profil](https://labs.hackthebox.com/achievement/machine/3369747/394)  
 > 📅 **Date :** Juin 2026
