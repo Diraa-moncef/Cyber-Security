@@ -195,24 +195,24 @@ La machine **MEOW** illustre une vulnérabilité critique : un service **Telnet*
 
 ## 📸 Captures d'écran
 
-### Screenshot 1 — Con/home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/ping scan.png)
+### Screenshot 1 
 
 <!-- Remplacer par votre capture d'écran -->
 ![Connexion VPN HTB](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/MEOW/IMG/ping%20scan.png)
 
 ---
 
-### Screenshot/home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/nmap&telnet .png)
+### Screenshot 2
 
 <!-- Remplacer par votre capture d'écran -->
-![Scan Nmap](https://github.com/Diraa-moncef/Cyber-Security/edit/main/HackTheBox/MEOW/MEOW.md)
+![Scan Nmap](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/MEOW/IMG/nmap%26telnet%20.png)
 
 ---
 
-### Screenshot/home/H4CK0ZCEF/Desktop/Cyber-Security/HackTheBox/MEOW/IMG/flag.png)
+### Screenshot 3
 
 <!-- Remplacer par votre capture d'écran -->
-![Flag root](https://github.com/Diraa-moncef/Cyber-Security/edit/main/HackTheBox/MEOW/MEOW.md)
+![Flag root](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/MEOW/IMG/flag.png)
 
 ---
 
