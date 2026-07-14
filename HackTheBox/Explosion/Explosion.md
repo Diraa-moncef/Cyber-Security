@@ -18,6 +18,9 @@
 ║                                                                        ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 🔑 Machine Info
+
+text
+
 ┌──────────────────────────────────────────────────┐
 │  Name       : Explosion                          │
 │  OS         : Windows                            │
@@ -27,9 +30,12 @@
 │  Theme      : RDP / Misconfiguration             │
 │  Player #   : 312646                             │
 └──────────────────────────────────────────────────┘
-🎯 Objective
-Exploiter un serveur RDP (Remote Desktop Protocol) mal configuré avec un compte Administrateur disposant d'un mot de passe vide (blank password) pour accéder au bureau distant et récupérer le flag.
+🎯 Objective Le but de ce laboratoire est de démontrer l'impact critique d'une mauvaise configuration des services d'accès à distance. L'objectif consiste à énumérer l'hôte cible, identifier le service RDP exposé, et exploiter une session non sécurisée (compte Administrator dépourvu de mot de passe) afin d'obtenir un accès complet au système et de compromettre la machine.
+
 📝 Tasks & Answers
+
+text
+
 ┌────┬────────────────────────────────────────────────────────────────────────────────┬─────────────────────────┐
 │ #  │ Question                                                                       │ Answer                  │
 ├────┼────────────────────────────────────────────────────────────────────────────────┼─────────────────────────┤
@@ -42,22 +48,33 @@ Exploiter un serveur RDP (Remote Desktop Protocol) mal configuré avec un compte
 │ 07 │ Username that successfully returns a desktop projection with a blank password? │ Administrator           │
 └────┴────────────────────────────────────────────────────────────────────────────────┴─────────────────────────┘
 🔍 Walkthrough
-Step 1 — Ping & Nmap Scan
+
+Step 1 — Reconnaissance & Network Scanning
+Dans un premier temps, nous validons la connectivité réseau avec la cible via une requête ICMP. Ensuite, un balayage réseau complet via nmap est effectué afin de cartographier les services exposés. Ce scan révèle l'ouverture du port TCP 3389, indiquant la présence du service de bureau à distance (ms-wbt-server / RDP).
+
+bash
+
 ping 10.129.32.115
 nmap -p- -sV 10.129.32.115
-Vérification de la connectivité et scan des ports pour identifier le service RDP sur le port 3389.
-![Ping](./IMG/ping.png)
-![Nmap Scan](./IMG/nmap_scan.png)
-Step 2 — Connect with xfreerdp
+Ping Output Nmap Scan Output
+
+Step 2 — Exploitation via RDP (Blank Password)
+Suite à l'identification du service RDP, nous établissons une connexion au bureau distant via l'utilitaire xfreerdp. Les systèmes mal configurés laissant parfois le compte Administrator actif sans mot de passe, nous forçons l'utilisation de cet utilisateur. Après avoir accepté le certificat SSL, la session est accordée en laissant les champs Domain et Password vides, nous octroyant ainsi un accès interactif à la cible.
+
+bash
+
 xfreerdp /v:10.129.32.115 /u:Administrator
-Connexion au bureau distant en utilisant le compte Administrator sans mot de passe.
-Acceptation du certificat et bypass du prompt Domain/Password en appuyant sur Entrée.
-![xfreerdp](./IMG/xfreerdp.png)
-Step 3 — Get the Flag 🚩
-Une fois sur le bureau distant, le flag est affiché dans Notepad.
-Récupérer la valeur du root flag: 951fa96d7830c451b536be5a6be008a0.
-![Flag](./IMG/flag.png)
+xfreerdp Connection
+
+Step 3 — Privilege Escalation & Flag Exfiltration 🚩
+Une fois la session graphique établie avec les privilèges d'administrateur, nous naviguons sur le bureau. Le fichier flag est directement accessible, nous permettant l'exfiltration du Root Flag et validant ainsi la compromission totale de la machine.
+
+Root Flag
+
 🏁 Result
+
+text
+
 ╔═══════════════════════════════════════════╗
 ║                                           ║
 ║   🚩  ROOT FLAG OWNED  🚩                 ║
@@ -68,6 +85,9 @@ Récupérer la valeur du root flag: 951fa96d7830c451b536be5a6be008a0.
 ║                                           ║
 ╚═══════════════════════════════════════════╝
 📚 Concepts Learned
+
+text
+
 ┌─────────────────────────┬──────────────────────────────────────────────────────┐
 │ Concept                 │ Description                                          │
 ├─────────────────────────┼──────────────────────────────────────────────────────┤
@@ -81,10 +101,16 @@ Récupérer la valeur du root flag: 951fa96d7830c451b536be5a6be008a0.
 │                         │ les services réseau (port 3389 ouvert).              │
 └─────────────────────────┴──────────────────────────────────────────────────────┘
 🛠️ Tools Used
+
+text
+
 • ping       — Test de connectivité réseau (ICMP)
 • nmap       — Scanner de ports et services
 • xfreerdp   — Client Remote Desktop Protocol (RDP)
 📂 Repository Structure
+
+text
+
 EXPLOSION/
 ├── README.md
 └── IMG/
@@ -93,6 +119,9 @@ EXPLOSION/
     ├── xfreerdp.png
     └── flag.png
 👤 Author
+
+text
+
    ╔═══════════════════════════════╗
    ║  H4concef — Player #312646    ║
    ║  HackTheBox Starting Point    ║
