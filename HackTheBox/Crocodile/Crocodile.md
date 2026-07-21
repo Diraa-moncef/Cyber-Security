@@ -58,7 +58,7 @@ nmap -sV -sC 10.129.x.x
 | 21   | open  | ftp     | vsftpd 3.0.3              |
 | 80   | open  | http    | Apache httpd 2.4.41       |
 
-![Scan Nmap](./screenshots/nmap_scan.png)
+![Scan Nmap](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/scan%20nmap.png)
 
 > 💡 **Analyse :** Le port **21 (FTP)** et le port **80 (HTTP)** sont ouverts. Point très important, Nmap nous indique que le login anonyme FTP est autorisé (renvoyant le code `230`).
 
@@ -74,15 +74,13 @@ ftp 10.129.x.x
 # À l'invite Password, laissez vide et appuyez sur Entrée
 ```
 
-![Login FTP](./screenshots/ftp_login.png)
+![Login FTP](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/login%20ftp.png)
 
 Une fois connecté, on liste les fichiers disponibles et on télécharge ceux qui semblent intéressants avec la commande `get`.
 
-![Commande get FTP](./screenshots/ftp_get.png)
-
 En inspectant le contenu du fichier téléchargé (par exemple `allowed.userlist` et les éventuels fichiers de mots de passe associés), on découvre plusieurs noms d'utilisateurs potentiels, dont le compte privilégié : `admin`.
 
-![Liste userlist](./screenshots/list_userlist.png)
+![Liste userlist](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/usrlist.png)
 
 ---
 
@@ -90,7 +88,7 @@ En inspectant le contenu du fichier téléchargé (par exemple `allowed.userlist
 
 En parallèle de notre investigation FTP, on visite le service web hébergé sur le port 80 pour voir ce qui s'y trouve.
 
-![Service Web](./screenshots/web_service.png)
+![Service Web](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/version%20apache.png)
 
 Pour trouver des pages d'administration ou des fichiers cachés, on utilise **Gobuster** avec le paramètre `-x` pour rechercher spécifiquement des extensions de fichiers comme `.php` ou `.html`.
 
@@ -98,11 +96,11 @@ Pour trouver des pages d'administration ou des fichiers cachés, on utilise **Go
 gobuster dir -u http://10.129.x.x/ -w /usr/share/wordlists/dirb/common.txt -x php,html
 ```
 
-![Scan Gobuster](./screenshots/gobuster_scan.png)
+![Scan Gobuster](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/hidden%20dir.png)
 
 Le fuzzing web nous révèle la présence d'une page très intéressante permettant potentiellement de s'authentifier : `login.php`.
 
-![Page login.php](./screenshots/login_page.png)
+![Page login.php](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/login%20page.png)
 
 ---
 
@@ -114,11 +112,9 @@ En utilisant le nom d'utilisateur `admin` et le mot de passe associé découvert
 
 On accède alors au tableau de bord (Dashboard) de l'administrateur.
 
-![Dashboard](./screenshots/dashboard.png)
-
 Et c'est sur cette page que nous trouvons le flag final qui valide la compromission de la machine !
 
-![Root Flag](./screenshots/flag.png)
+![Root Flag](https://github.com/Diraa-moncef/Cyber-Security/blob/main/HackTheBox/Crocodile/IMG/flag.png)
 
 ```
 HTB{************}
